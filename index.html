@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Interactive Piano</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="piano.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+  <div id="piano">
+    <div class="header">
+      <h4 class="logo">MyPiano</h4>
+      <div class="controls">
+        <button id="keyboard-toggle">Show Keyboard Map</button>
+        <div class="volume-control">
+          <span>Volume:</span>
+          <input type="range" id="volume" min="0" max="1" step="0.1" value="0.7">
+        </div>
+      </div>
+    </div>
+    <div class="keys">
+      <div class="key"></div>
+      <div class="key black--key"></div>
+      <div class="key black--key"></div>
+      <div class="key"></div>
+      <div class="key black--key"></div>
+      <div class="key black--key"></div>
+      <div class="key black--key"></div>
+
+      <div class="key"></div>
+      <div class="key black--key"></div>
+      <div class="key black--key"></div>
+      <div class="key"></div>
+      <div class="key black--key"></div>
+      <div class="key black--key"></div>
+      <div class="key black--key"></div>
+
+      <div class="key"></div>
+      <div class="key black--key"></div>
+      <div class="key black--key"></div>
+      <div class="key"></div>
+      <div class="key black--key"></div>
+      <div class="key black--key"></div>
+      <div class="key black--key"></div>
+    </div>
+    <div id="keyboard-map" class="keyboard-map">
+      <h5>Keyboard Controls</h5>
+      <div class="white-keys-map">
+        <span>A</span><span>S</span><span>D</span><span>F</span><span>G</span><span>H</span><span>J</span><span>K</span><span>L</span><span>;</span><span>'</span>
+      </div>
+      <div class="black-keys-map">
+        <span>W</span><span>E</span><span>T</span><span>Y</span><span>U</span><span>O</span><span>P</span>
+      </div>
+    </div>
+    <div class="note-display"></div>
+  </div>
+
+  <!-- Audio Elements -->
+  <audio id="C" src="https://raw.githubusercontent.com/gleitz/midi-js-soundfonts/gh-pages/FatBoy/acoustic_grand_piano-mp3/C2.mp3"></audio>
+  <audio id="C#" src="https://raw.githubusercontent.com/gleitz/midi-js-soundfonts/gh-pages/FatBoy/acoustic_grand_piano-mp3/Db2.mp3"></audio>
+  <audio id="D" src="https://raw.githubusercontent.com/gleitz/midi-js-soundfonts/gh-pages/FatBoy/acoustic_grand_piano-mp3/D2.mp3"></audio>
+  <audio id="D#" src="https://raw.githubusercontent.com/gleitz/midi-js-soundfonts/gh-pages/FatBoy/acoustic_grand_piano-mp3/Eb2.mp3"></audio>
+  <audio id="E" src="https://raw.githubusercontent.com/gleitz/midi-js-soundfonts/gh-pages/FatBoy/acoustic_grand_piano-mp3/E2.mp3"></audio>
+  <audio id="F" src="https://raw.githubusercontent.com/gleitz/midi-js-soundfonts/gh-pages/FatBoy/acoustic_grand_piano-mp3/F2.mp3"></audio>
+  <audio id="F#" src="https://raw.githubusercontent.com/gleitz/midi-js-soundfonts/gh-pages/FatBoy/acoustic_grand_piano-mp3/Gb2.mp3"></audio>
+  <audio id="G" src="https://raw.githubusercontent.com/gleitz/midi-js-soundfonts/gh-pages/FatBoy/acoustic_grand_piano-mp3/G2.mp3"></audio>
+  <audio id="G#" src="https://raw.githubusercontent.com/gleitz/midi-js-soundfonts/gh-pages/FatBoy/acoustic_grand_piano-mp3/Ab2.mp3"></audio>
+  <audio id="A" src="https://raw.githubusercontent.com/gleitz/midi-js-soundfonts/gh-pages/FatBoy/acoustic_grand_piano-mp3/A2.mp3"></audio>
+  <audio id="A#" src="https://raw.githubusercontent.com/gleitz/midi-js-soundfonts/gh-pages/FatBoy/acoustic_grand_piano-mp3/Bb2.mp3"></audio>
+  <audio id="B" src="https://raw.githubusercontent.com/gleitz/midi-js-soundfonts/gh-pages/FatBoy/acoustic_grand_piano-mp3/B2.mp3"></audio>
+  <audio id="C3" src="https://raw.githubusercontent.com/gleitz/midi-js-soundfonts/gh-pages/FatBoy/acoustic_grand_piano-mp3/C3.mp3"></audio>
+  <audio id="C#3" src="https://raw.githubusercontent.com/gleitz/midi-js-soundfonts/gh-pages/FatBoy/acoustic_grand_piano-mp3/Db3.mp3"></audio>
+  <audio id="D3" src="https://raw.githubusercontent.com/gleitz/midi-js-soundfonts/gh-pages/FatBoy/acoustic_grand_piano-mp3/D3.mp3"></audio>
+  <audio id="D#3" src="https://raw.githubusercontent.com/gleitz/midi-js-soundfonts/gh-pages/FatBoy/acoustic_grand_piano-mp3/Eb3.mp3"></audio>
+  <audio id="E3" src="https://raw.githubusercontent.com/gleitz/midi-js-soundfonts/gh-pages/FatBoy/acoustic_grand_piano-mp3/E3.mp3"></audio>
+  <audio id="F3" src="https://raw.githubusercontent.com/gleitz/midi-js-soundfonts/gh-pages/FatBoy/acoustic_grand_piano-mp3/F3.mp3"></audio>
+  <audio id="F#3" src="https://raw.githubusercontent.com/gleitz/midi-js-soundfonts/gh-pages/FatBoy/acoustic_grand_piano-mp3/Gb3.mp3"></audio>
+  <audio id="G3" src="https://raw.githubusercontent.com/gleitz/midi-js-soundfonts/gh-pages/FatBoy/acoustic_grand_piano-mp3/G3.mp3"></audio>
+  <audio id="G#3" src="https://raw.githubusercontent.com/gleitz/midi-js-soundfonts/gh-pages/FatBoy/acoustic_grand_piano-mp3/Ab3.mp3"></audio>
+
+  <script src="piano.js"></script>
+</body>
+</html>

@@ -1,0 +1,236 @@
+html {
+  box-sizing: border-box;
+}
+
+*, *::before, *::after {
+  box-sizing: inherit;
+}
+
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+}
+
+#piano {
+  background-color: #00471b;
+  width: 992px;
+  height: 290px;
+  margin: 80px auto;
+  padding: 90px 20px 0 20px;
+  position: relative;
+  border-radius: 10px;
+  box-shadow: 0 10px 20px rgba(0,0,0,0.3);
+}
+
+/* Header and Controls */
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 20px;
+  position: absolute;
+  top: 20px;
+  left: 0;
+  right: 0;
+}
+
+.logo {
+  margin: 0;
+  color: #ddd;
+  font-size: 1.5rem;
+}
+
+.controls {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+button {
+  background-color: #006400;
+  color: white;
+  border: none;
+  padding: 8px 15px;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.2s;
+  font-size: 0.9rem;
+}
+
+button:hover {
+  background-color: #008000;
+}
+
+.volume-control {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: #ddd;
+}
+
+.volume-control input {
+  width: 100px;
+}
+
+/* Keys */
+.keys {
+  background-color: #040404;
+  width: 949px;
+  height: 180px;
+  padding-left: 2px;
+  overflow: hidden;
+  position: relative;
+  border-radius: 0 0 5px 5px;
+}
+
+.key {
+  background-color: #ffffff;
+  position: relative;
+  width: 41px;
+  height: 175px;
+  margin: 2px;
+  float: left;
+  border-radius: 0 0 3px 3px;
+  transition: all 0.1s ease;
+  cursor: pointer;
+  user-select: none;
+}
+
+.key.black--key::after {
+  background-color: #1d1e22;
+  content: "";
+  position: absolute;
+  left: -18px;
+  width: 32px;
+  height: 100px;
+  z-index: 1;
+  border-radius: 0 0 3px 3px;
+}
+
+/* Key states */
+.key:hover:not(.active) {
+  background-color: #f0f0f0;
+}
+
+.key.black--key:hover:not(.active)::after {
+  background-color: #333;
+}
+
+.key.active {
+  background-color: #ddd !important;
+}
+
+.key.black--key.active::after {
+  background-color: #555 !important;
+}
+
+/* Keyboard Map */
+.keyboard-map {
+  position: absolute;
+  bottom: -80px;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: #00471b;
+  padding: 10px 20px;
+  border-radius: 0 0 10px 10px;
+  display: none;
+  box-shadow: 0 5px 10px rgba(0,0,0,0.2);
+}
+
+.keyboard-map h5 {
+  margin: 0 0 10px 0;
+  color: white;
+  text-align: center;
+  font-size: 1rem;
+}
+
+.white-keys-map, .black-keys-map {
+  display: flex;
+  justify-content: center;
+  gap: 5px;
+}
+
+.white-keys-map span {
+  display: inline-block;
+  width: 30px;
+  text-align: center;
+  background: white;
+  color: black;
+  padding: 5px;
+  border-radius: 0 0 4px 4px;
+  font-weight: bold;
+}
+
+.black-keys-map span {
+  display: inline-block;
+  width: 20px;
+  text-align: center;
+  background: #333;
+  color: white;
+  padding: 5px;
+  margin: 0 5px;
+  position: relative;
+  top: -10px;
+  font-weight: bold;
+  border-radius: 0 0 3px 3px;
+}
+
+/* Note Display */
+.note-display {
+  position: absolute;
+  top: 70px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 24px;
+  font-weight: bold;
+  color: white;
+  background-color: rgba(0,0,0,0.5);
+  padding: 5px 15px;
+  border-radius: 20px;
+  opacity: 0;
+  transition: opacity 0.3s;
+  pointer-events: none;
+}
+
+/* Animation Effects */
+@keyframes keyPress {
+  0% { transform: scale(1); }
+  50% { transform: scale(0.98); }
+  100% { transform: scale(1); }
+}
+
+.key:active, .key.active {
+  animation: keyPress 0.2s ease;
+}
+
+/* Responsive Design */
+@media (max-width: 1000px) {
+  #piano {
+    width: 95%;
+    padding: 80px 10px 0 10px;
+  }
+  
+  .keys {
+    width: 100%;
+  }
+  
+  .key {
+    width: calc(100% / 21 - 4px);
+  }
+  
+  .key.black--key::after {
+    width: calc(100% / 21 - 4px - 10px);
+    left: -10px;
+  }
+  
+  .header {
+    flex-direction: column;
+    gap: 10px;
+    top: 10px;
+  }
+  
+  .controls {
+    width: 100%;
+    justify-content: center;
+  }
+}
