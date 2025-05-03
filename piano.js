@@ -144,3 +144,18 @@ document.addEventListener('DOMContentLoaded', function() {
   // Initialize volume
   setVolume(volumeControl.value);
 });
+
+// Prevent right-click context menu
+document.addEventListener('contextmenu', event => event.preventDefault());
+
+// Prevent common DevTools shortcuts
+document.addEventListener('keydown', event => {
+  if (
+    event.key === 'F12' ||
+    (event.ctrlKey && event.shiftKey && ['I', 'J', 'C'].includes(event.key)) ||
+    (event.ctrlKey && event.key === 'U')
+  ) {
+    event.preventDefault();
+    return false;
+  }
+});
