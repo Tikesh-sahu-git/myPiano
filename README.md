@@ -2,6 +2,10 @@
 
 A responsive, interactive virtual piano built with HTML, CSS, and JavaScript. Play using your mouse or your computer keyboard!
 
+<p align="center">
+  <img src="screenshot.png" alt="Piano Screenshot" width="80%" />
+</p>
+
 🚀 **Live Demo**: [tikesh-sahu-git.github.io/myPiano](https://tikesh-sahu-git.github.io/myPiano/)
 
 ---
